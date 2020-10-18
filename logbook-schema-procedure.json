@@ -1,0 +1,31 @@
+{
+  "$id": "http://json-schema.org/draft-7/hyper-schema-output",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "A sub-schema of logbook-schema-encounter.json, for procedures",
+
+  "type": "object",
+  "properties": {
+      "category": {
+          "type": "object",
+          "properties": {
+              "airway": { 
+                  "type": "object",
+                  "properties": {
+                      "tracheal intubation": {"type": "string", "enum":["single lumen","double lumen","fibreoptic","awake fibreoptic","other"]},
+                      "lma placement": { "type": "string", "enum":["standard","supreme","iGel","other"]}
+               },
+              "lines": { "type": "object"},
+              "regional blocks": { "type": "object" },
+              "general anaesthesia": { 
+                  "type": "object",
+                  "properties": {
+                      "induction": { "type": "string", "enum": ["Inhalation", "Intravenous"]},
+                      "maintenance": { "type": "string", "enum": ["Inhalational Agent","TIVA/TCI","TIVA/Other"]}
+                }
+          }
+      }
+
+  }
+}
+}
+}

@@ -1,0 +1,77 @@
+{
+  "$id": "http://json-schema.org/draft-7/hyper-schema-output",
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
+{
+  "type": "object",
+  "properties": {
+     "metadata": {
+        "type": "object",
+        "properties": {
+          "setting": { "type": "string", "enum": ["unit or physical location","rotation or training programme","country"]},
+          "unique_id": { "type": "integer"},
+          "comment": { "type": "string" },
+          "version": { "type": "string" },
+          "timestamp": { "type": "string", "format": "date-time" }
+        }
+     }    
+  },
+
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer"},
+    "category": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer"},
+        "category_type": { "type": "string", "enum": ["Anaesthesia","ICM","Pain","Transfer","Resus"]}
+      }
+    },
+    "activity_grouping": {
+      "type": "object",
+      "properties": {
+        "activity_name": { "type": "string", "enum": ["Theatre List","Ward Round","Clinic"]},
+        "id": { "type": "integer" }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "properties": {
+        "start": { "type": "string", "format": "date-time"  },
+        "end": { "type": "string", "format": "date-time"  },
+        "category": { "type": "string", "enum": ["Day","Evening","Night"]}
+      }
+    },
+    "actors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type":"integer"},
+          "role": {"type": "string", "enum": ["Patient","Performer","Supervisor"]}
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type":"object",
+        "properties": {
+          "id": { "type": "integer"},
+          "event_type": { "type":"string","enum": ["procedure","teaching","simulation"]},
+          "event": {
+            "type":"object",
+            "properties": {
+              "procedure": { "$ref": "logbook-schema-procedure.json"},
+              "surgical procedure": { "type":"object"},
+              "teaching": { "type": "string"},
+              "simulation": { "type": "string"}
+            }
+          } 
+        }
+      }
+
+    }
+
+  }
+}
