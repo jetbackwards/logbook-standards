@@ -1,0 +1,47 @@
+{
+	"Case ID": 1,
+	"Date": "17 September 2018",
+	"Time": "afternoon-1300-1800",
+	"Deanery": "Health Education North East",
+	"School": "The Northern School of Anaesthesia",
+	"Hospital": "The James Cook University Hospital",
+	"Age": "3 years",
+	"ASA": "asa-1",
+	"Day Case": "no",
+	"Priority": "expedited",
+	"Primary Specialty": "Paediatrics",
+	"Secondary Specialty (Optional)": "Plastics/burns",
+	"Operation": "Other Paediatrics - write this in 'notes'",
+	"Supervision": "Immediate",
+	"Supervisor": "consultant",
+	"Teaching": "none",
+	"Mode of Anaesthesia": "ga-ett-ippv",
+	"Regional Type": [
+		"caudal"
+	],
+	"Regional Technique": [
+		"landmark-technique"
+	],
+	"Regional Catheter": [
+		"no"
+	],
+	"Regional Supervision": [
+		"immediate"
+	],
+	"Significant Event": "no",
+	"Regional Notes": [
+		null
+	],
+	"Procedure Type": [
+		null
+	],
+	"Procedure Supervision": [
+		null
+	],
+	"Procedure Supervisor": [
+		null
+	],
+	"Procedure Notes": [
+		null
+	]
+}

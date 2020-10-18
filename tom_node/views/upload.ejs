@@ -1,0 +1,21 @@
+<%- include('./components/header') %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>The Parser</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 p-3">
+				<h2>Upload File For Parsing</h2>
+				<div class="p-5 text-center">
+					<form method="post" action="upload" enctype="multipart/form-data">
+						<input type="file" name="uploadFile" class="form-control"/><br/>
+						<input type="submit" value="Submit" class="btn btn-primary"/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<%- include('./components/footer') %>
+

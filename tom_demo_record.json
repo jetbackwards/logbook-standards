@@ -1,0 +1,79 @@
+{
+	"schema_version": "0.1",
+	"descriptors": {
+		"@g_c2c80d6b-d345-4f11-9381-4577a1af549d": "James Cook University Hospital",
+		"@g_f9389cfb-c397-409f-8953-188d2701e202": {
+			"name": "Dr Smith",
+			"grade": "Consultant", /* Enum */
+			"location": "Immediate", /* Enum */
+		}
+	},
+	"collections": [
+		{
+			"id":
+			"name":
+			"list": [
+				"15855013-676d-48ca-91bd-658ffcfb0217",
+			]
+
+		}
+	],
+	"logs": [
+		{
+			"id": "15855013-676d-48ca-91bd-658ffcfb0217", /* Do we need to specify a format for this? */
+			"collection_id": "e44705f0-1170-46e5-b777-105f7e6e126e", /* Facility to allow grouping of records together */
+			"reference": "MyCase", /* User specified reference */
+			"time": {
+				"date": "17-10-2020", /* Suggested format dd-mm-yyyy */
+				"session": "Morning", /* Enum: Morning|Afternoon|Evening|Night */
+			},
+			"location": {
+				"geographical": "@g_c2c80d6b-d345-4f11-9381-4577a1af549d", /* Allow relational lookup in any field */
+				"departmental": "Theatre"
+			},
+			"patient": {
+				"age": "67", /* All numerical values should be as strings. Age should be in years, but can be floating point number */ 
+				"asa": "2", /* Enum: 1|2|3|4|5|6 */
+			},
+			"supervisor": "@g_f9389cfb-c397-409f-8953-188d2701e202",
+			"events": [
+				{
+					"type": "surgery",
+					"details": {
+						"operations": [
+							{
+								"title": "Mastectomy",
+								"specialty": "Breast",
+							},
+							{
+								"title": "DIEP Flap",
+								"specialty": "Plastics"
+							}
+						]
+					}
+				},
+				{
+					"type": "anaesthetic", /* Enum: Surgery|Anaesthetic|Procedure|Regional|... */
+					"details": { /* Details are specific to the type of the event, do we need to define this per type? */
+						"airway-management": "ETT",
+						"induction": "IV-RSI", /* Enum IV|IV-RSI|Volatile */
+						"maintenance": "Volatile", /* Enum IV|Volatile */
+					},
+				},
+				{
+					"type": "regional",
+					"details": {
+						"name": "pectoralis",
+						"supervisor": { /* Could override the supervisor from above! */
+							"name": "Dr Jones",
+							"grade": "Consulatant",
+							"location": "Local"
+						},
+						"guidance": "ultrasound"
+					}
+				}
+			]
+		}
+	]
+
+}
