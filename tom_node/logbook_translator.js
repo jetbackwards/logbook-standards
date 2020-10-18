@@ -117,6 +117,51 @@ module.exports = {
 				}
 			}
 
+			var record = {
+				"metadata": {
+					"setting": "",
+					"unique_id": "",
+					"comment": "",
+					"version": "",
+					"timestamp": ""
+				},
+				"id": 1,
+				"category": {
+					"id": 1,
+					"category_type": "Anaesthesia"
+				},
+				"activity_grouping": {
+					"activity_name": "Theatre List",
+					"id": 1,
+				},
+				"timing": {
+					"start": "",
+					"end": "",
+					"category": ""
+				},
+				"actors": [
+					{
+						"id": 1,
+						"role": "Patient"
+					}
+				],
+				"events": [
+					{
+						"id": 1,
+						"event_type": "procedure",
+						"event": {
+							"procedure": {
+								"airway": {
+									"tracheal intubation": {
+										
+									}
+								}
+							},
+						}
+					}
+
+				]
+			};
 
 
 			var record = {
