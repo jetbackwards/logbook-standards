@@ -94,19 +94,27 @@ module.exports = {
 			var regional = [];
 			for (var j = 0; j < irl[i]["Regional Type"].length; j++) {
 				var regionalListItem = {};
+				var push = false;
 				for(r in regionalTranslation) {
+					push = push || (irl[i][r][j] != null);
 					regionalListItem[regionalTranslation[r]] = irl[i][r][j];
 				}
-				regional.push(regionalListItem);				
+				if(push) {
+					regional.push(regionalListItem);				
+				}
 			}
 
 			var procedures = [];
 			for (var k = 0; k < irl[i]["Procedure Type"].length; k++) {
 				var procedureListItem = {};
+				var push = false;
 				for(p in procedureTranslation) {
+					push = push || (irl[i][p][k] != null);
 					procedureListItem[procedureTranslation[p]] = irl[i][p][k];
 				}
-				procedures.push(procedureListItem);				
+				if(push) {
+					procedures.push(procedureListItem);				
+				}
 			}
 
 
@@ -114,7 +122,7 @@ module.exports = {
 			var record = {
 				"encounter": { "date": date, "session": session },
 				"details": {
-					"type": "anaesthetic",
+					"type": "Anaesthetic",
 					"speciality": irl[i]["Primary Speciality"],
 					"operation": irl[i]["Operation"],
 					"priority": this.util.capitalize(irl[i]["Priority"]),	

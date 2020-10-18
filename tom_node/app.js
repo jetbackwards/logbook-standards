@@ -2,6 +2,7 @@ const express = require('express');
 const formidable = require('formidable');
 const fs = require('fs');
 const lgbk = require('./logbook_translator');
+const frmbld = require("./form_builder");
 
 
 const app = express();
@@ -13,6 +14,13 @@ app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
 	res.render("index");
+});
+
+app.get("/new", (req,res) => {
+	res.render("new", {"form": {"contents": "<input type='text' class='form-control'/>"}});
+});
+app.post("/new", (req,res) => {
+
 });
 
 
@@ -53,6 +61,14 @@ app.get("/logbooks/:file", (req,res) => {
 	res.write(file, 'binary');
 	res.end();
 });
+
+
+
+
+
+
+
+
 
 app.listen(port, () => {
 	console.log(`Example App Listening At http://localhost:${port}`);
